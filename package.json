@@ -4,15 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "qserve & node flo.js"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "babel": "^4.7.16",
     "babelify": "^5.0.4",
     "browserify": "^9.0.3",
     "fb-flo": "^0.4.0",
+    "qserve": "0.0.5",
     "watchify": "^2.6.0"
   }
 }
