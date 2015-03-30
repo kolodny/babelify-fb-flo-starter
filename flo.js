@@ -3,7 +3,7 @@ var flo = require('fb-flo'),
   path = require('path'),
   exec = require('child_process').exec;
 
-var cmd = './node_modules/.bin/browserify -t babelify index.js -o built.js';
+var cmd = './node_modules/.bin/browserify -d -t babelify index.js -o built.js';
 
 var server = flo('./', {
   port: 8888,
@@ -21,6 +21,10 @@ function resolver(filepath, callback) {
     callback({
       resourceURL: 'built.js',
       contents: fs.readFileSync('built.js').toString()
+    });
+    callback({
+      resourceURL: filepath,
+      contents: fs.readFileSync(filepath).toString()
     });
   });
 }
